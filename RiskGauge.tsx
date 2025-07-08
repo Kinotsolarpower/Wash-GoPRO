@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckIcon } from './Icons';
+import { CheckIcon } from './common/Icons';
 
 type RiskGaugeProps = {
   score: number;
