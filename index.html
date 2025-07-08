@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wash&Go Pro - Premium Vehicle Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lexend:wght@700;800&family=Lora:ital,wght@0,400;1,400..700&display=swap" rel="stylesheet">
+    <style>
+      @property --p {
+        syntax: '<number>';
+        inherits: true;
+        initial-value: 0;
+      }
+      @property --c {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: #D4AF37;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                'dark': '#0A2342', // Deep Navy
+                'accent': '#D4AF37', // Brushed Gold
+                'light': '#F5F5F5', // Porcelain White
+                'slate': '#6E7F80', // Slate Gray
+                'dark-accent': '#08203d',
+                'light-accent': '#0c2647',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Lexend', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            keyframes: {
+                'fade-in': { 
+                    '0%': { opacity: 0, transform: 'translateY(20px) scale(0.98)' },
+                    '100%': { opacity: 1, transform: 'translateY(0) scale(1)' },
+                },
+                'border-spin': {
+                    '100%': { 'transform': 'rotate(360deg)' }
+                },
+                'shimmer': {
+                    '100%': { transform: 'translateX(100%)' },
+                }
+            },
+            animation: {
+                'fade-in': 'fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'border-spin': 'border-spin 3s linear infinite',
+                'shimmer': 'shimmer 1.5s infinite'
+            },
+            boxShadow: { 
+              'neumorphic-outer': '12px 12px 24px #081d36, -12px -12px 24px #0c294e',
+              'neumorphic-inner': 'inset 6px 6px 12px #081d36, inset -6px -6px 12px #0c294e',
+              'neumorphic-press': 'inset 5px 5px 10px #081d36, inset -5px -5px 10px #0c294e',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.7.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
